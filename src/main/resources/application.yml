@@ -1,0 +1,37 @@
+
+#port ??
+server:
+  port: 8085
+
+#datasource
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: SCOTT
+    password: 1234
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      enabled: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+# mybatis config
+mybatis:
+  mapper-locations: mappers/**/*.xml # mappers ?? ?? ??.xml
+  type-aliases-package:
+
+logging:
+  level:
+    root: info
+
