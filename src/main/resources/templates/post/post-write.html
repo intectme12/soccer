@@ -1,10 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+  <link href="/soccer/dist/output.css" rel="stylesheet">
+  <link href="./dist/dynamicText.css" rel="stylesheet">
+  <link href="./dist/common.css" rel="stylesheet">
 </head>
-<body>
-$END$
+<body class="mx-auto bg-gray-500/10">
+
+<!-- header -->
+<header class="bg-red-500 fixed w-[100%] top-0 z-50">
+  <!-- header div -->
+  <div class="w-[1586px] m-auto grid grid-cols-4 gap-4 rounded-md">
+    <!-- logo -->
+    <div class=""></div>
+    <!-- header center -->
+    <div class="col-span-2 m-auto">
+      <!-- css:dynamicText.css / js:dynamicText.js  -->
+      <div class="" id="dynamic"></div>
+    </div>
+    <!-- login & logout -->
+    <div class="m-auto p-3 relative">
+      <div class="grid grid-cols-6 gap-2 m-auto">
+        <!-- input.css에 상세설정 -->
+        <input class="input-login" type="text" placeholder="id">
+        <input class="input-login" type="text" placeholder="pwd">
+        <button class="button-login" type="button">login</button>
+        <button class="button-login" type="button">sns</button>
+      </div>
+      <div class="grid grid-flow-col text-center float-right pt-4">
+        <!-- input.css에 상세설정 -->
+        <div class="mr-2 pr-2 text-white border-r-2 border-white-500 " type="button">회원가입</div>
+        <div class="text-white" type="button">비밀번호찾기</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- find -->
+<div class="m-auto mt-[115px] my-[20px] w-[1584px] flex justify-center">
+  <input class="input-find w-4/12 h-12 rounded-lg drop-shadow-md indent-11" type="text" placeholder="통합검색">
+  <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="찾기 아이콘">찾기 아이콘  제작자: alkhalifi design - Flaticon</a> -->
+</div>
+
+<!-- container -->
+<div class="mb-[15px] flex m-auto w-[1586px] bg-grey-200">
+
+  <!-- leftSide -->
+  <aside class="w-[180px] fixed bg-white drop-shadow-md rounded-md z-50">
+    <ul class="h-[40px] bg-black text-white text-base leading-9 rounded-t-md">
+      <li>MENU</li>
+    </ul>
+    <ul class="text-base leading-9">
+      <li>인기게시글</li>
+      <li>자유게시판</li>
+      <li>직관일지</li>
+      <li>전술분석</li>
+      <li>국내축구소식</li>
+      <li>해외축구소식</li>
+      <li>데이터센터</li>
+      <li>유튜브</li>
+    </ul>
+  </aside>
+
+  <!-- leftside fixed 사용시 공간확보 -->
+  <div class=" w-[180px] self-start bg-transparent">
+  </div>
+
+  <!-- main -->
+  <section class="px-[10px] flex-1 h-auto drop-shadow">
+    <div class="w-[100%] h-[100%] grid grid-row-2 gap-4 text-base leading-8">
+      <!-- section > div > div input.css에 일괄 css 설정 -->
+      <div class="recommend-header">
+        <div class="indent-12 text-[1.25rem] grid grid-cols-2 place-content-between p-2 border-b-2 border-gray-500/20 mb-4">
+          <p class="align-middle">글쓰기</p>
+          <div class="write-button text-right">
+            <button type="submit">등록</button>
+            <button type="submit">임시저장</button>
+            <button type="submit">이전</button>
+          </div>
+        </div>
+        <div class="my-3">
+          <select name="" id="" class="p-2 rounded-md bg-gray-500/10">
+            <option value="">게시판</option>
+          </select>
+          <select name="" id="" class="p-2 rounded-md bg-gray-500/10">
+            <option value="">팀선택</option>
+          </select>
+          <select name="" id="" class="p-2 rounded-md bg-gray-500/10">
+            <option value="">라운드</option>
+          </select>
+          <input type="text" class="w-[100%] rounded-md mt-2 border-2 border-gray-500/30" placeholder="제목">
+        </div>
+        <!-- summernote -->
+        <div>
+          <div id="summernote"></div>
+          <script>
+            $('#summernote').summernote({
+              tabsize: 1,
+              height: 700,
+              toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+              ]
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- rightSide -->
+  <aside class="w-[230px] h-[500px] self-start bg-white drop-shadow rounded-md">
+  </aside>
+</div>
+
+<!-- footer -->
+<footer class="bg-white text-center items-center h-[120px] z-0">
+  <div class="border-t-2 pt-[30px] flex justify-center">
+    <ul class="footer-ul">
+      <li>이용약관</li>
+      <li>개인정보취급방침</li>
+      <li>청소년보호정책</li>
+    </ul>
+  </div>
+  <p class="m-[10px]">Copyright © since 2023 ~ . All rights reserved.</p>
+</footer>
+<script type="text/javascript" src="./js/dynamicText.js"></script>
 </body>
 </html>

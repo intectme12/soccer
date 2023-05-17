@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    section > div > div {
+        @apply bg-white px-[15px] py-[5px] rounded-md;
+    }
+
+    aside > ul > li {
+        @apply indent-5 hover:bg-gray-500/10;
+    }
+
+    input {
+        @apply indent-5;
+    }
+
+    tr {
+        @apply hover:bg-blue-500/10;
+    }
+
+    .footer-ul > li {
+        @apply float-left mr-4;
+    }
+
+    .main-score-ul > li {
+        @apply float-left mr-2;
+    }
+
+    .write-button > button {
+        @apply bg-gray-500/10 w-[70px] h-[35px] text-base rounded-md;
+    }
+
+    .write-ul >li > button {
+        @apply w-[80px] h-[40px] text-base bg-gray-500/10 rounded-md;
+    }
+
+    .section-table > tbody > tr {
+        @apply border-b-2 border-gray-500/10;
+    }
+
+    .section-table > tbody > tr > td {
+        @apply p-2;
+    }
+    .section-table > thead > tr > th{
+        @apply border-b-2 border-gray-500/10 p-2;
+    }
+
+    .user-detail-div > div {
+        @apply p-[2px] mb-1;
+    }
+}
+
+@layer components {
+
+    .input-login {
+        @apply col-span-2 rounded-md;
+    }
+
+    .button-login {
+        @apply h-8 bg-blue-500 rounded-md text-white;
+    }
+
+    .sign-up01 > div > input {
+        @apply w-[200px] mt-2 border-2 border-gray-500/20 rounded-md;
+    }
+
+    .sign-up01 > div > button {
+        @apply w-[80px] border-2 border-gray-500/20 rounded-md;
+    }
+
+    .sign-up01 > p {
+        @apply p-1 pl-4;
+    }
+
+    .sign-up01 > div > span {
+        @apply pl-2;
+    }
+}

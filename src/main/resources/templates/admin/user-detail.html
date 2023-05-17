@@ -1,10 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link href="./dist/dynamicText.css" rel="stylesheet">
+    <link href="./dist/common.css" rel="stylesheet">
 </head>
-<body>
-$END$
+<body class="mx-auto bg-gray-500/10">
+
+<!-- header -->
+<header class="bg-red-500 fixed w-[100%] top-0 z-50">
+    <!-- header div -->
+    <div class="w-[1586px] m-auto grid grid-cols-4 gap-4 rounded-md">
+        <!-- logo -->
+        <div class=""></div>
+        <!-- header center -->
+        <div class="col-span-2 m-auto">
+            <!-- css:dynamicText.css / js:dynamicText.js  -->
+            <div class="" id="dynamic"></div>
+        </div>
+        <!-- login & logout -->
+        <div class="m-auto p-3 relative">
+            <div class="grid grid-cols-6 gap-2 m-auto">
+                <!-- input.css에 상세설정 -->
+                <input class="input-login" type="text" placeholder="id">
+                <input class="input-login" type="text" placeholder="pwd">
+                <button class="button-login" type="button">login</button>
+                <button class="button-login" type="button">sns</button>
+            </div>
+            <div class="grid grid-flow-col text-center float-right pt-4">
+                <!-- input.css에 상세설정 -->
+                <div class="mr-2 pr-2 text-white border-r-2 border-white-500 " type="button">회원가입</div>
+                <div class="text-white" type="button">비밀번호찾기</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- find -->
+<div class="m-auto mt-[115px] my-[20px] w-[1584px] flex justify-center">
+    <input class="input-find w-4/12 h-12 rounded-lg drop-shadow-md indent-11" type="text" placeholder="통합검색">
+    <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="찾기 아이콘">찾기 아이콘  제작자: alkhalifi design - Flaticon</a> -->
+</div>
+
+<!-- container -->
+<div class="mb-[15px] flex m-auto w-[1586px] bg-grey-200">
+
+    <!-- leftSide -->
+    <aside class="w-[180px] fixed bg-white drop-shadow-md rounded-md z-50">
+        <ul class="h-[40px] bg-black text-white text-base leading-9 rounded-t-md">
+            <li>MENU</li>
+        </ul>
+        <ul class="text-base leading-9">
+            <li>회원정보</li>
+            <li>징계회원</li>
+            <li>신고된회원</li>
+            <li>인기게시글</li>
+            <li>자유게시판</li>
+            <li>전술분석</li>
+            <li>직관일지</li>
+            <li>댓글관리</li>
+            <li>신고된게시글</li>
+            <li>신고된댓글</li>
+            <li>공지사항</li>
+        </ul>
+    </aside>
+
+    <!-- leftside fixed 사용시 공간확보 -->
+    <div class=" w-[180px] self-start bg-transparent">
+    </div>
+
+    <!-- main -->
+    <section class="px-[10px] flex-1 h-auto drop-shadow">
+        <div class="w-[100%] h-[100%] text-base leading-8">
+            <div>
+                <!-- header -->
+                <div class="main-recommend-header indent-11 border-b-2 border-gray-500/10">
+                    <p class="font-medium">회원상세정보</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="my-4 p-2 self-start grid grid-cols-4 gap-1 border-2 border-gray-500/10 text-center">
+                        <!-- 번호, 가입일, 아이디, 닉네임, 이름, 이메일, 신고된횟수, 댓글개수, 게시글개수, 신고댓글, 신고게시글,
+                            추천, 비추, 포인트, 로그인 & 로그아웃이력, 로그인 ip?-->
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">회원번호</div>
+                            <div>1</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">아이디</div>
+                            <div>jihwan</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">닉네임</div>
+                            <div>찌입니다.</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">이름</div>
+                            <div>김지환</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">가입일</div>
+                            <div>2023.04.19</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">탈퇴여부</div>
+                            <div>X</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">신고횟수</div>
+                            <div>0</div>
+                        </div>
+                        <div class="user-detail-div">
+                            <div class="bg-blue-500/10">포인트</div>
+                            <div>3,000</div>
+                        </div>
+                        <div class="user-detail-div col-span-2">
+                            <div class="bg-blue-500/10">이메일</div>
+                            <div>intectme@naver.com</div>
+                        </div>
+                        <div class="user-detail-div col-span-2">
+                            <div class="bg-blue-500/10">정지사유</div>
+                            <div>-</div>
+                        </div>
+                        <div class="user-detail-div col-span-2">
+                            <div class="bg-blue-500/10">로그인</div>
+                            <div>2023.04.20 13:34</div>
+                        </div>
+                        <div class="user-detail-div col-span-2">
+                            <div class="bg-blue-500/10">로그아웃</div>
+                            <div>2023.04.30 18.43</div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="my-4 grid grid-rows-2 gap-2">
+                        <!-- 게시글이력 -->
+                        <div class="border-2 border-gray-500/10">
+                            <div class="text-center">
+                                <div class="border-b-2 border-gray-500/10"><a href="">게시글</a></div>
+                            </div>
+                            <div class="grid grid-cols-8 py-2 px-4">
+                                <div>
+                                    자유
+                                </div>
+                                <div class="col-span-6">
+                                    <a>제목입니다</a>
+                                    <span class="text-red-500">3</span>
+                                </div>
+                                <div>
+                                    03-28
+                                </div>
+                                <div>
+                                    자유
+                                </div>
+                                <div class="col-span-6">
+                                    <a>제목입니다</a>
+                                    <span class="text-red-500">3</span>
+                                </div>
+                                <div>
+                                    03-28
+                                </div>
+                                <div>
+                                    자유
+                                </div>
+                                <div class="col-span-6">
+                                    <a>제목입니다</a>
+                                    <span class="text-red-500">3</span>
+                                </div>
+                                <div>
+                                    03-28
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 댓글 이력 -->
+                        <div class="border-2 border-gray-500/10">
+                            <div class="text-center">
+                                <div class="border-b-2 border-gray-500/10"><a href="">댓글</a></div>
+                            </div>
+                            <div class="grid grid-cols-8 py-2 px-4">
+                                <div>
+                                    자유
+                                </div>
+                                <div class="col-span-6">
+                                    <a>제목입니다</a>
+                                    <span class="text-red-500">3</span>
+                                </div>
+                                <div>
+                                    03-28
+                                </div>
+                                <div>
+                                    자유
+                                </div>
+                                <div class="col-span-6">
+                                    <a>제목입니다</a>
+                                    <span class="text-red-500">3</span>
+                                </div>
+                                <div>
+                                    03-28
+                                </div>
+                                <div>
+                                    자유
+                                </div>
+                                <div class="col-span-6">
+                                    <a>제목입니다</a>
+                                    <span class="text-red-500">3</span>
+                                </div>
+                                <div>
+                                    03-28
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- rightSide -->
+    <aside class="w-[230px] h-[500px] self-start bg-white drop-shadow rounded-md">
+    </aside>
+</div>
+
+<!-- footer -->
+<footer class="bg-white text-center items-center h-[120px] z-0">
+    <div class="border-t-2 pt-[30px] flex justify-center">
+        <ul class="footer-ul">
+            <li>이용약관</li>
+            <li>개인정보취급방침</li>
+            <li>청소년보호정책</li>
+        </ul>
+    </div>
+    <p class="m-[10px]">Copyright © since 2023 ~ . All rights reserved.</p>
+</footer>
+<script type="text/javascript" src="./js/dynamicText.js"></script>
 </body>
 </html>

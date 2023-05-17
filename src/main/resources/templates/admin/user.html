@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link href="./dist/dynamicText.css" rel="stylesheet">
+    <link href="./dist/common.css" rel="stylesheet">
+</head>
+<body class="mx-auto bg-gray-500/10">
+
+<!-- header -->
+<header class="bg-red-500 fixed w-[100%] top-0 z-50">
+    <!-- header div -->
+    <div class="w-[1586px] m-auto grid grid-cols-4 gap-4 rounded-md">
+        <!-- logo -->
+        <div class=""></div>
+        <!-- header center -->
+        <div class="col-span-2 m-auto">
+            <!-- css:dynamicText.css / js:dynamicText.js  -->
+            <div class="" id="dynamic"></div>
+        </div>
+        <!-- login & logout -->
+        <div class="m-auto p-3 relative">
+            <div class="grid grid-cols-6 gap-2 m-auto">
+                <!-- input.css에 상세설정 -->
+                <input class="input-login" type="text" placeholder="id">
+                <input class="input-login" type="text" placeholder="pwd">
+                <button class="button-login" type="button">login</button>
+                <button class="button-login" type="button">sns</button>
+            </div>
+            <div class="grid grid-flow-col text-center float-right pt-4">
+                <!-- input.css에 상세설정 -->
+                <div class="mr-2 pr-2 text-white border-r-2 border-white-500 " type="button">회원가입</div>
+                <div class="text-white" type="button">비밀번호찾기</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- find -->
+<div class="m-auto mt-[115px] my-[20px] w-[1584px] flex justify-center">
+    <input class="input-find w-4/12 h-12 rounded-lg drop-shadow-md indent-11" type="text" placeholder="통합검색">
+    <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="찾기 아이콘">찾기 아이콘  제작자: alkhalifi design - Flaticon</a> -->
+</div>
+
+<!-- container -->
+<div class="mb-[15px] flex m-auto w-[1586px] bg-grey-200">
+
+    <!-- leftSide -->
+    <aside class="w-[180px] fixed bg-white drop-shadow-md rounded-md z-50">
+        <ul class="h-[40px] bg-black text-white text-base leading-9 rounded-t-md">
+            <li>MENU</li>
+        </ul>
+        <ul class="text-base leading-9">
+            <li>회원정보</li>
+            <li>블랙리스트</li>
+            <li>신고된회원</li>
+            <li>인기게시글</li>
+            <li>자유게시판</li>
+            <li>전술분석</li>
+            <li>직관일지</li>
+            <li>댓글관리</li>
+            <li>신고된게시글</li>
+            <li>신고된댓글</li>
+            <li>공지사항</li>
+        </ul>
+    </aside>
+
+    <!-- leftside fixed 사용시 공간확보 -->
+    <div class=" w-[180px] self-start bg-transparent">
+    </div>
+
+    <!-- main -->
+    <section class="px-[10px] flex-1 h-auto drop-shadow">
+        <div class="w-[100%] h-[100%] text-base leading-8">
+            <div>
+                <div class="main-recommend-header indent-11 border-b-2 border-gray-500/10">
+                    <p class="font-medium">회원정보</p>
+                </div>
+                <table class="w-[100%] text-center my-4">
+                    <tr class="border-b-2 border-gray-500/50">
+                        <th>번호</th>
+                        <th>아이디</th>
+                        <th>이름</th>
+                        <th>닉네임</th>
+                        <th>생년월일</th>
+                        <th>이메일</th>
+                        <th>블랙</th>
+                        <th>포인트</th>
+                    </tr>
+                    <tr class="border-b-2 border-gray-500/10">
+                        <td>1</td>
+                        <td>jiwhan</td>
+                        <td>김지환</td>
+                        <td>찌임니다</td>
+                        <td>1989.07.15</td>
+                        <td>intectme@naver.com</td>
+                        <td>X</td>
+                        <td>3,000</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- rightSide -->
+    <aside class="w-[230px] h-[500px] self-start bg-white drop-shadow rounded-md">
+    </aside>
+</div>
+
+<!-- footer -->
+<footer class="bg-white text-center items-center h-[120px] z-0">
+    <div class="border-t-2 pt-[30px] flex justify-center">
+        <ul class="footer-ul">
+            <li>이용약관</li>
+            <li>개인정보취급방침</li>
+            <li>청소년보호정책</li>
+        </ul>
+    </div>
+    <p class="m-[10px]">Copyright © since 2023 ~ . All rights reserved.</p>
+</footer>
+<script type="text/javascript" src="./js/dynamicText.js"></script>
+</body>
+</html>
