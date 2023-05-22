@@ -1,72 +1,25 @@
 <!doctype html>
-<html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/soccer/dist/output.css" rel="stylesheet">
-  <link href="./dist/dynamicText.css" rel="stylesheet">
-  <link href="./dist/common.css" rel="stylesheet">
+  <link href="/css/dist/output.css" rel="stylesheet">
+  <link href="/css/dist/dynamicText.css" rel="stylesheet">
+  <link href="/css/dist/common.css" rel="stylesheet">
 </head>
 <body class="mx-auto bg-gray-500/10">
 
 <!-- header -->
-<header class="bg-red-500 fixed w-[100%] top-0 z-50">
-  <!-- header div -->
-  <div class="w-[1586px] m-auto grid grid-cols-4 gap-4 rounded-md">
-    <!-- logo -->
-    <div class=""></div>
-    <!-- header center -->
-    <div class="col-span-2 m-auto">
-      <!-- css:dynamicText.css / js:dynamicText.js  -->
-      <div class="" id="dynamic"></div>
-    </div>
-    <!-- login & logout -->
-    <div class="m-auto p-3 relative">
-      <div class="grid grid-cols-6 gap-2 m-auto">
-        <!-- input.css에 상세설정 -->
-        <input class="input-login" type="text" placeholder="id">
-        <input class="input-login" type="text" placeholder="pwd">
-        <button class="button-login" type="button">login</button>
-        <button class="button-login" type="button">sns</button>
-      </div>
-      <div class="grid grid-flow-col text-center float-right pt-4">
-        <!-- input.css에 상세설정 -->
-        <div class="mr-2 pr-2 text-white border-r-2 border-white-500 " type="button">회원가입</div>
-        <div class="text-white" type="button">비밀번호찾기</div>
-      </div>
-    </div>
-  </div>
-</header>
+<div th:include="main/main-header.html"></div>
 
 <!-- find -->
-<div class="m-auto mt-[115px] my-[20px] w-[1584px] flex justify-center">
-  <input class="input-find w-4/12 h-12 rounded-lg drop-shadow-md indent-11" type="text" placeholder="통합검색">
-  <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="찾기 아이콘">찾기 아이콘  제작자: alkhalifi design - Flaticon</a> -->
-</div>
+<div th:include="main/main-find.html"></div>
 
 <!-- container -->
 <div class="mb-[15px] flex m-auto w-[1586px] bg-grey-200">
 
   <!-- leftSide -->
-  <aside class="w-[180px] fixed bg-white drop-shadow-md rounded-md z-50">
-    <ul class="h-[40px] bg-black text-white text-base leading-9 rounded-t-md">
-      <li>MENU</li>
-    </ul>
-    <ul class="text-base leading-9">
-      <li>인기게시글</li>
-      <li>자유게시판</li>
-      <li>직관일지</li>
-      <li>전술분석</li>
-      <li>국내축구소식</li>
-      <li>해외축구소식</li>
-      <li>데이터센터</li>
-      <li>유튜브</li>
-    </ul>
-  </aside>
-
-  <!-- leftside fixed 사용시 공간확보 -->
-  <div class=" w-[180px] self-start bg-transparent">
-  </div>
+  <div th:include="main/main-left.html"></div>
 
   <!-- main -->
   <section class="px-[10px] flex-1 h-auto drop-shadow">
@@ -80,7 +33,7 @@
           <p class="font-medium">이용약관</p>
         </div>
         <div >
-                        <textarea class="p-4 py-2 w-[100%] h-[200px] border-2 border-gray-500/20 rounded-md">
+            <textarea class="p-4 py-2 w-[100%] h-[200px] border-2 border-gray-500/20 rounded-md">
     [중요] 가입후 이메일 주소로 인증 이메일이 발송됩니다.
     [중요] 악용 및 투표 조작을 막기 위해 중복으로 아이디 2개 이상 사용할 경우, 모든 아이디가 차단될 수 있습니다.
     [공지] 에펨코리아 통합 규정 링크: https://www.fmkorea.com/567222051
@@ -198,7 +151,7 @@
     제16조 (재판관할)
     회사와 회원간에 발생한 서비스 이용에 관한 분쟁에 대하여는 대한민국 법을 적용하며, 본 분쟁으로 인한 소는 민사소송법상의 관할을 가지는 대한민국의 법원에 제기합니다.
     부칙 (2015년 10월 3일 공고)
-                        </textarea>
+            </textarea>
         </div>
         <div>
           <input type="checkbox">
@@ -207,8 +160,8 @@
         <div class="mt-4 pl-2">
           <p class="font-medium">개인정보처리방침</p>
         </div>
-        <div >
-                        <textarea class="p-4 py-2 w-[100%] h-[200px] border-2 border-gray-500/20 rounded-md">
+        <div>
+            <textarea class="p-4 py-2 w-[100%] h-[200px] border-2 border-gray-500/20 rounded-md">
 에펨코리아 개인정보 처리방침
 정보통신망 이용촉진 등에 관한 법률 등 관련 법률에 의한 개인정보 보호규정 및 정보통신부가 제정한 개인정보지침을 준수하고 있습니다.
 
@@ -228,7 +181,7 @@
 
 • 공고일자: 2015년 10월 3일
 • 시행일자: 2015년 10월 3일
-                        </textarea>
+            </textarea>
         </div>
         <div>
           <input type="checkbox">
@@ -246,21 +199,11 @@
   </section>
 
   <!-- rightSide -->
-  <aside class="w-[230px] h-[500px] self-start bg-white drop-shadow rounded-md">
-  </aside>
+  <div th:include="main/main-right.html"></div>
 </div>
 
 <!-- footer -->
-<footer class="bg-white text-center items-center h-[120px] z-0">
-  <div class="border-t-2 pt-[30px] flex justify-center">
-    <ul class="footer-ul">
-      <li>이용약관</li>
-      <li>개인정보취급방침</li>
-      <li>청소년보호정책</li>
-    </ul>
-  </div>
-  <p class="m-[10px]">Copyright © since 2023 ~ . All rights reserved.</p>
-</footer>
-<script type="text/javascript" src="./js/dynamicText.js"></script>
+<div th:include="main/main-footer.html"></div>
+
 </body>
 </html>
