@@ -14,7 +14,7 @@ spring:
     restart:
       enabled: false
     livereload:
-      enabled: true
+      enabled:
   freemarker:
     cache: false
   servlet:
