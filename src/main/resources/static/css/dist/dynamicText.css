@@ -1,0 +1,24 @@
+#dynamic {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#dynamic::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    right: -10px;
+    width: 6px;
+    height: 10%;
+    background-color: white;
+}
+
+#dynamic.active::after {
+    display: none;
+}
+
+

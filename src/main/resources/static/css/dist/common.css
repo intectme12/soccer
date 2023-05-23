@@ -1,0 +1,26 @@
+.input-find {
+    background-image : url('../image/index/find_icon.png');
+    background-repeat : no-repeat;
+    background-size : 20px;
+    background-position: 3% center;
+}
+
+.recommend-header {
+    background-image : url('../image/recommend_list/stars.png');
+    background-repeat : no-repeat;
+    background-size : 40px;
+    background-position: 2% 5px;
+}
+.main-recommend-header {
+
+    background-image : url('../image/recommend_list/stars.png');
+    background-repeat : no-repeat;
+    background-size : 35px;
+}
+
+.post-main {
+    background-image : url('../image/recommend_list/stars.png');
+    background-repeat : no-repeat;
+    background-size : 40px;
+    background-position: 2% 10px;
+}

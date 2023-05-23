@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/dist/dynamicText.css" rel="stylesheet">
+</head>
+<body class="mx-auto bg-gray-500/10">
+<!-- header -->
+<header class="bg-red-500 fixed w-[100%] top-0 z-50">
+  <!-- header div -->
+  <div class="w-[1586px] m-auto grid grid-cols-4 gap-4 rounded-md">
+    <!-- logo -->
+    <div class=""></div>
+    <!-- header center -->
+    <div class="col-span-2 m-auto">
+      <!-- css:dynamicText.css / js:dynamicText.js  -->
+      <div class="" id="dynamic"></div>
+    </div>
+    <!-- login & logout -->
+    <div class="m-auto p-3 relative">
+      <div class="grid grid-cols-6 gap-2 m-auto">
+        <!-- input.css에 상세설정 -->
+        <input class="input-login" type="text" placeholder="id">
+        <input class="input-login" type="text" placeholder="pwd">
+        <button class="button-login" type="button"></button>
+        <button class="button-login" type="button">sns</button>
+      </div>
+      <div class="grid grid-flow-col text-center float-right pt-4">
+        <!-- input.css에 상세설정 -->
+        <a th:href="@{/sign/moveUserSignAgree}">
+          <div class="mr-2 pr-2 text-white border-r-2 border-white-500">회원가입</div>
+        </a>
+        <a>
+          <div class="text-white">비밀번호찾기</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<script type="text/javascript" src="/js/dynamicText.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/dist/output.css" rel="stylesheet">
+  <link href="/css/dist/common.css" rel="stylesheet">
+</head>
+<body class="mx-auto bg-gray-500/10">
+
+<!-- header -->
+<div th:include="main/main-header.html"></div>
+
+<!-- find -->
+<div th:include="main/main-find.html"></div>
+
+<!-- container -->
+<div class="mb-[15px] flex m-auto w-[1586px] bg-grey-200">
+
+  <!-- leftSide -->
+  <div th:include="main/main-left.html"></div>
+
+  <!-- main -->
+  <section class="px-[10px] flex-1 h-auto drop-shadow">
+    <div class="w-[100%] h-[100%] grid grid-flow-row grid-cols-2 gap-4 text-base leading-8">
+      <!-- section > div > div input.css에 일괄 css 설정 -->
+      <div>
+        <div class="main-recommend-header indent-11 border-b-2 border-gray-500/50">
+          <p class="font-medium">인기게시글</p>
+        </div>
+        <table class="section-table w-[100%] table-auto text-base text-center">
+          <thead>
+          <th>카테고리</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>조회</th>
+          <th>추천</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>자유게시판</td>
+            <td>오늘 무슨일이 있었는지 아십니까?</td>
+            <td>김지환</td>
+            <td>22</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>자유게시판</td>
+            <td>오늘 무슨일이 있었는지 아십니까?</td>
+            <td>김지환</td>
+            <td>22</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>자유게시판</td>
+            <td>오늘 무슨일이 있었는지 아십니까?</td>
+            <td>김지환</td>
+            <td>22</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>자유게시판</td>
+            <td>오늘 무슨일이 있었는지 아십니까?</td>
+            <td>김지환</td>
+            <td>22</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>자유게시판</td>
+            <td>오늘 무슨일이 있었는지 아십니까?</td>
+            <td>김지환</td>
+            <td>22</td>
+            <td>3</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="main-recommend-header indent-11 border-b-2 border-gray-500/50">
+          <p class="font-medium">직관일지</p>
+        </div>
+        <table class="section-table w-[100%] table-auto text-base text-center">
+          <thead>
+          <th>경기</th>
+          <th>라운드</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>날짜</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>서울</td>
+            <td>1라운드</td>
+            <td>서울vs인천 경기 직관다녀왔습니다.</td>
+            <td>배상길</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>1라운드</td>
+            <td>서울vs인천 경기 직관다녀왔습니다.</td>
+            <td>배상길</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>1라운드</td>
+            <td>서울vs인천 경기 직관다녀왔습니다.</td>
+            <td>배상길</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>1라운드</td>
+            <td>서울vs인천 경기 직관다녀왔습니다.</td>
+            <td>배상길</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>1라운드</td>
+            <td>서울vs인천 경기 직관다녀왔습니다.</td>
+            <td>배상길</td>
+            <td>23.03.24</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="main-recommend-header indent-11 border-b-2 border-gray-500/50">
+          <p class="font-medium">전술분석</p>
+        </div>
+        <table class="section-table w-[100%] table-auto text-base text-center">
+          <thead>
+          <th>경기</th>
+          <th>라운드</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>날짜</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>서울</td>
+            <td>2라운드</td>
+            <td>북패 vs 개랑 북패전술 분석 추천</td>
+            <td>박현준</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>2라운드</td>
+            <td>북패 vs 개랑 북패전술 분석 추천</td>
+            <td>박현준</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>2라운드</td>
+            <td>북패 vs 개랑 북패전술 분석 추천</td>
+            <td>박현준</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>2라운드</td>
+            <td>북패 vs 개랑 북패전술 분석 추천</td>
+            <td>박현준</td>
+            <td>23.03.24</td>
+          </tr>
+          <tr>
+            <td>서울</td>
+            <td>2라운드</td>
+            <td>북패 vs 개랑 북패전술 분석 추천</td>
+            <td>박현준</td>
+            <td>23.03.24</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="main-recommend-header indent-11 border-b-2 border-gray-500/50">
+          <p class="font-medium">경기일정</p>
+        </div>
+      </div>
+      <div>
+        <div class="main-recommend-header flex indent-11 border-b-2 border-gray-500/50">
+          <div>팀순위</div>
+          <div>개인순위</div>
+        </div>
+      </div>
+
+      <div></div>
+    </div>
+  </section>
+
+  <!-- rightSide -->
+  <div th:include="main/main-right.html"></div>
+</div>
+
+<!-- footer -->
+<div th:include="main/main-footer.html"></div>
+
+
+</body>
+</html>

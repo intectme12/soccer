@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/dist/output.css" rel="stylesheet">
+  <link href="/css/dist/common.css" rel="stylesheet">
+</head>
+<body class="mx-auto bg-gray-500/10">
+
+<!-- header -->
+<div th:include="main/main-header.html"></div>
+
+<!-- find -->
+<div th:include="main/main-find.html"></div>
+
+<!-- container -->
+<div class="mb-[15px] flex m-auto w-[1586px] bg-grey-200">
+
+  <!-- leftSide -->
+  <div th:include="main/main-left.html"></div>
+
+  <!-- main -->
+    <section class=" px-[10px] flex-1 h-auto drop-shadow">
+        <div class="w-[100%] h-[100%] text-base leading-8">
+            <!-- section > div > div input.css에 일괄 css 설정 -->
+            <div>
+                <div class="main-recommend-header indent-11 border-b-2 border-gray-500/50">
+                    <p class="font-medium">회원가입</p>
+                </div>
+                <div class="mt-[15px] flex flex-col sign-up01" id="div_sign">
+                    <div>
+                        <input type="text" placeholder="아이디" id="input_id" onchange="idOnChange()">
+                        <button onclick="idCheck()">중복확인</button>
+                        <span class="text-red-500" id="span_id">아이디 중복확인 해주세요.</span>
+                    </div>
+                    <p>4자 이상 13자 이하의 영어 혹은 영어, 숫자로 구성된 아이디를 만들어주세요.</p>
+                    <div>
+                        <input type="text" placeholder="닉네임" id="input_nik" onchange="nikOnChange()">
+                        <button onclick="nikCheck()">중복확인</button>
+                        <span class="text-red-500" id="span_nik">닉네임 중복확인 해주세요.</span>
+                    </div>
+                    <p>2자 이상 10자 이하의 한글, 영어, 숫자만 사용가능합니다.</p>
+                    <div>
+                        <input type="text" placeholder="비밀번호" id="input_pwd" onchange="pwdOnChange()">
+                        <span class="text-red-500" id="span_pwd">비밀번호 입력해주세요.</span>
+                        <br>
+                        <input type="text" placeholder="비밀번호 재입력" id="input_checkPwd" onchange="ckPwdOnChange()">
+                        <span class="text-red-500" id="span_checkPwd">비밀번호가 일치하지 않습니다.</span>
+                    </div>
+                    <p>8자 이상의 영어, 숫자, 특수문자로 구성된 비밀번호로 만들어주세요.</p>
+                    <div>
+                        <input type="text" placeholder="생년월일" id="input_birth" onchange="ckBirthOnChange()">
+                        <span class="text-red-500" id="span_birth">생년월일을 입력해주세요.</span>
+                    </div>
+                    <p>ex) 20230407</p>
+                    <div>
+                        <input type="text" placeholder="이메일" id="input_email" onchange="ckEmailOnChange()">
+                        <button type="submit">인증번호</button>
+                        <span class="text-red-500" id="span_email">이메일 주소를 입력해주세요.</span>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="이메일 인증번호" id="input_emailNo">
+                        <button type="submit">확인</button>
+                        <span class="text-red-500" id="span_emailNo">인증번호를 확인해 주세요.</span>
+                    </div>
+                    <p>비밀번호를 찾을 때 사용하는 이메일 주소를 입력해주세요.</p>
+                </div>
+                <div class="w-[100%] mt-4 p-4 border-t-2 border-gray-500/50 text-center">
+                    <button class="border-2 border-gray-500/20 w-[120px]" type="submit">회원가입</button>
+                    <button class="border-2 border-gray-500/20 w-[120px]" type="submit">취소</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- rightSide -->
+  <div th:include="main/main-right.html"></div>
+</div>
+
+<!-- footer -->
+<div th:include="main/main-footer.html"></div>
+
+<script type="text/javascript" src="/js/sign/user-sign.js"></script>
+</body>
+</html>
