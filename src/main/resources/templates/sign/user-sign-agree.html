@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/css/dist/output.css" rel="stylesheet">
-  <link href="/css/dist/dynamicText.css" rel="stylesheet">
   <link href="/css/dist/common.css" rel="stylesheet">
+
 </head>
 <body class="mx-auto bg-gray-500/10">
 
@@ -23,9 +23,11 @@
 
   <!-- main -->
   <section class="px-[10px] flex-1 h-auto drop-shadow">
+
     <div class="w-[100%] h-[100%] text-base leading-8">
       <!-- section > div > div input.css에 일괄 css 설정 -->
       <div>
+      <form id="isChecked" th:action="@{/sign/moveUserSign}" method="post">
         <div class="main-recommend-header indent-11 border-b-2 border-gray-500/50">
           <p class="font-medium">회원가입</p>
         </div>
@@ -154,8 +156,10 @@
             </textarea>
         </div>
         <div>
-          <input type="checkbox">
-          <span>[필수] 이용약관에 동의 합니다.</span>
+            <label for="ck_termsOfUse">
+                <input type="checkbox" id="ck_termsOfUse" name="ck_termsOfUse">
+                <span>[필수] 이용약관에 동의 합니다.</span>
+            </label>
         </div>
         <div class="mt-4 pl-2">
           <p class="font-medium">개인정보처리방침</p>
@@ -184,16 +188,21 @@
             </textarea>
         </div>
         <div>
-          <input type="checkbox">
-          <span>[필수] 개인정보처리방침에 동의 합니다.</span>
+            <label for="ck_privacyPolicy">
+                <input type="checkbox" id="ck_privacyPolicy" name="ck_privacyPolicy">
+                <span>[필수] 개인정보처리방침에 동의 합니다.</span>
+            </label>
           <br>
-          <input type="checkbox">
-          <span>[필수] 14세 이상 본인 입니다.</span>
+            <label for="ck_ageLimit">
+                <input type="checkbox" id="ck_ageLimit" name="ck_ageLimit">
+                <span>[필수] 14세 이상 본인 입니다.</span>
+            </label>
         </div>
         <div class="w-[100%] mt-4 p-4 border-t-2 border-gray-500/50 text-center">
-          <button class="border-2 border-gray-500/20 w-[120px]" type="submit">회원가입</button>
+          <button class="border-2 border-gray-500/20 w-[120px]" type="submit" id="userSign">회원가입</button>
           <button class="border-2 border-gray-500/20 w-[120px]" type="submit">취소</button>
         </div>
+      </form>
       </div>
     </div>
   </section>
@@ -204,6 +213,6 @@
 
 <!-- footer -->
 <div th:include="main/main-footer.html"></div>
-
+<script type="text/javascript" src="/js/sign/user-sign-agree.js"></script>
 </body>
 </html>
