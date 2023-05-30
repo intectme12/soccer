@@ -8,7 +8,7 @@ spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521:xe
-    username: SCOTT
+    username: SOCCER
     password: 1234
   devtools:
     restart:
@@ -28,11 +28,20 @@ spring:
   mvc:
     view:
       suffix: .html
+  mail:
+    host: smtp.naver.com
+    port: 465
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      mail.smtp.ssl.trust: smtp.naver.com
+    username: intectme
+    password: Tnekaos3!!
 
 # mybatis config
 mybatis:
   mapper-locations: mappers/**/*.xml # mappers ?? ?? ??.xml
-  type-aliases-package:
+  type-aliases-package: com.jihwan.soccer.mail.model.dto
 
 logging:
   level:

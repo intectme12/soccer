@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jihwan.soccer.sign.model.dao.SignMapper">
+    <resultMap id="userSignResultMap" type="com.jihwan.soccer.sign.model.dto.SignDTO">
+        <result property="userNo" column="USER_NO"/>
+        <result property="userId" column="USER_ID"/>
+        <result property="userNick" column="USER_NICK"/>
+        <result property="userPwd" column="USER_PWD"/>
+        <result property="userBirth" column="USER_BIR"/>
+        <result property="userRegDate" column="USER_REG_DATE"/>
+        <result property="userPoint" column="USER_POINT"/>
+    </resultMap>
+
+    <select id="checkUserId" resultType="String">
+        SELECT
+               USER_ID
+          FROM USER_INFO
+         WHERE USER_ID = #{ userId }
+    </select>
+
+    <select id="checkUserNik" resultType="String">
+        SELECT
+              USER_NICK
+         FROM USER_INFO
+        WHERE USER_NICK = #{ userNick }
+    </select>
+
+    <insert id="insertUserSign" parameterType="com.jihwan.soccer.sign.model.dto.SignDTO">
+        INSERT INTO USER_INFO
+        (
+          USER_NO,
+          USER_ID,
+          USER_NICK,
+          USER_EMAIL,
+          USER_PWD,
+          USER_BIR,
+          USER_REG_DATE,
+          USER_POINT
+        )
+        VALUES
+        (
+          sequence_user_no.NEXTVAL,
+          #{ userId },
+          #{ userNick },
+          #{ userEmail },
+          #{ userPwd },
+          TO_DATE(#{ userBirth },'YYYYMMDD'),
+          SYSDATE,
+          1
+        )
+    </insert>
+</mapper>

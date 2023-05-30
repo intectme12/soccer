@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jihwan.soccer.mail.model.dao.MailMapper">
+    <resultMap id="mailCertResultMap" type="MailCertDTO">
+        <result property="certKey" column="CERT_KEY"/>
+        <result property="certEmail" column="CERT_EMAIL"></result>
+    </resultMap>
+
+    <select id="selectEmail" resultType="String">
+        SELECT
+               CERT_EMAIL
+          FROM USER_CERT
+         WHERE CERT_EMAIL = #{ certEmail }
+    </select>
+    <insert id="sendTempkey">
+        INSERT INTO USER_CERT
+        (
+         CERT_NO,
+         CERT_KEY,
+         CERT_EMAIL
+        )
+        VALUES
+        (
+         sequence_cert_no.NEXTVAL,
+         #{ certKey },
+         #{ certEmail }
+        )
+    </insert>
+    <update id="tempKeyUpdate">
+        UPDATE USER_CERT
+           SET CERT_KEY = #{ certKey }
+         WHERE CERT_EMAIL = #{ certEmail }
+    </update>
+    <select id="ckEmailNo" resultType="String">
+        SELECT
+               CERT_KEY
+          FROM USER_CERT
+         WHERE CERT_EMAIL = #{ certEmail }
+    </select>
+</mapper>
