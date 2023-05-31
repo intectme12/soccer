@@ -351,14 +351,6 @@ function ckEmailNo(){
 
 function userSignSubmit(){
 
-    let spanId = document.getElementById('span_id').style.color;
-    let spanNick = document.getElementById('span_nik').style.color;
-    let spanPwd = document.getElementById('span_pwd').style.color;
-    let spanCkPwd = document.getElementById('span_checkPwd').style.color;
-    let spanBirth = document.getElementById('span_birth').style.color;
-    let spanEmail = document.getElementById('span_email').style.color;
-    let spanEmailNo = document.getElementById('span_emailNo').style.color;
-
     let userId = document.getElementById('input_id');
     let userIdValue = userId.value;
     let userNick = document.getElementById('input_nik');
@@ -372,47 +364,82 @@ function userSignSubmit(){
     let userEmailValue = userEmail.value;
     let userEmailNo = document.getElementById('input_emailNo');
 
-    if(spanId != 'green'){
-        alert("아이디를 다시 확인해주세요.");
-        userId.focus();
-        return;
+    let spanColors = [
+        document.getElementById('span_id').style.color,
+        document.getElementById('span_nik').style.color,
+        document.getElementById('span_pwd').style.color,
+        document.getElementById('span_checkPwd').style.color,
+        document.getElementById('span_birth').style.color,
+        document.getElementById('span_email').style.color,
+        document.getElementById('span_emailNo').style.color
+    ]
+
+    function checkColor (spanColor, errMsg, inputId){
+        if(spanColor != 'green'){
+            alert(errMsg);
+            inputId.focus();
+            return false;
+        }
+        return true;
     }
 
-    if(spanNick != 'green'){
-        alert("닉네임을 다시 확인해주세요.");
-        userNick.focus();
-        return;
-    }
+    if(!checkColor(spanColors[0], "아이디를 다시 확인해주세요.", userId)){ return; }
+    if(!checkColor(spanColors[1], "닉네임을 다시 확인해주세요.", userNick)){ return; }
+    if(!checkColor(spanColors[2], "비밀번호를 다시 확인해주세요.", userPwd)){ return; }
+    if(!checkColor(spanColors[3], "비밀번호를 다시 확인해주세요.", userCkPwd)){ return; }
+    if(!checkColor(spanColors[4], "생년월일을 다시 확인해주세요.", userBirth)){ return; }
+    if(!checkColor(spanColors[5], "이메일을 다시 확인해주세요.", userEmail)){ return; }
+    if(!checkColor(spanColors[6], "인증번호를 다시 확인해주세요.", userEmailNo)){ return; }
 
-    if(spanPwd != 'green'){
-        alert("비밀번호를 다시 확인해주세요.");
-        userPwd.focus();
-        return;
-    }
+    // let spanId = document.getElementById('span_id').style.color;
+    // let spanNick = document.getElementById('span_nik').style.color;
+    // let spanPwd = document.getElementById('span_pwd').style.color;
+    // let spanCkPwd = document.getElementById('span_checkPwd').style.color;
+    // let spanBirth = document.getElementById('span_birth').style.color;
+    // let spanEmail = document.getElementById('span_email').style.color;
+    // let spanEmailNo = document.getElementById('span_emailNo').style.color;
 
-    if(spanCkPwd != 'green'){
-        alert("비밀번호를 다시 확인해주세요.");
-        userCkPwd.focus();
-        return;
-    }
-
-    if(spanBirth != 'green'){
-        alert("생년월일을 다시 확인해주세요.");
-        userBirth.focus();
-        return;
-    }
-
-    if(spanEmail != 'green'){
-        alert("이메일을 다시 확인해주세요.");
-        userEmail.focus();
-        return;
-    }
-
-    if(spanEmailNo != 'green'){
-        alert("인증번호를 다시 확인해주세요.");
-        userEmailNo.focus();
-        return;
-    }
+    // if(spanId != 'green'){
+    //     alert("아이디를 다시 확인해주세요.");
+    //     userId.focus();
+    //     return;
+    // }
+    //
+    // if(spanNick != 'green'){
+    //     alert("닉네임을 다시 확인해주세요.");
+    //     userNick.focus();
+    //     return;
+    // }
+    //
+    // if(spanPwd != 'green'){
+    //     alert("비밀번호를 다시 확인해주세요.");
+    //     userPwd.focus();
+    //     return;
+    // }
+    //
+    // if(spanCkPwd != 'green'){
+    //     alert("비밀번호를 다시 확인해주세요.");
+    //     userCkPwd.focus();
+    //     return;
+    // }
+    //
+    // if(spanBirth != 'green'){
+    //     alert("생년월일을 다시 확인해주세요.");
+    //     userBirth.focus();
+    //     return;
+    // }
+    //
+    // if(spanEmail != 'green'){
+    //     alert("이메일을 다시 확인해주세요.");
+    //     userEmail.focus();
+    //     return;
+    // }
+    //
+    // if(spanEmailNo != 'green'){
+    //     alert("인증번호를 다시 확인해주세요.");
+    //     userEmailNo.focus();
+    //     return;
+    // }
 
     let userInfo = {
         userId: userIdValue,
