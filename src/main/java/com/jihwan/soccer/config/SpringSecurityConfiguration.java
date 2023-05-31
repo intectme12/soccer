@@ -1,6 +1,6 @@
 package com.jihwan.soccer.config;
 
-import com.jihwan.soccer.login.model.service.LoginUserDetails;
+import com.jihwan.soccer.login.model.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    LoginUserDetails loginUserDetails;
+    UserDetailsServiceImpl userDetailsServiceImpl;
 
     // 인증, 인가가 필요없는 경로를 설정할떄 사용
     @Override
@@ -37,8 +37,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
             .csrf().disable()
             .authorizeRequests()
-            // 누구나 접근 가능한 경로를 설정
-            .anyRequest().authenticated()
+                .antMatchers("/","/sign/**", "/mail/**").permitAll()
+                .anyRequest().authenticated()
                 .and()
                     .formLogin()
                     .loginPage("/login/loginPopup")
@@ -46,14 +46,15 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .passwordParameter("userPwd")
                     .loginProcessingUrl("/login/userLogin")
                     .defaultSuccessUrl("/")
+                    .failureUrl("/login/userLogin")
                     .permitAll()
                 .and()
                     .logout()
-                    .logoutUrl("userLogout");
+                    .logoutUrl("/userLogout");
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(loginUserDetails);
+        auth.userDetailsService(userDetailsServiceImpl);
     }
 }

@@ -70,7 +70,12 @@ public class SignServiceImpl implements SignService{
         String result = "";
         if(userSign > 0){
 
-            result = "true";
+            int userSignRole = signMapper.insertUserSignRole(signDTO.getUserId());
+
+            if(userSignRole > 0){
+
+                result = "true";
+            }
         } else {
 
             result = "false";

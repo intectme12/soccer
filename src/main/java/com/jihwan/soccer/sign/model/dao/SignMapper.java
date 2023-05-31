@@ -11,4 +11,6 @@ public interface SignMapper {
     String checkUserNik(String userNik);
 
     int insertUserSign(SignDTO signDTO);
+
+    int insertUserSignRole(String userId);
 }

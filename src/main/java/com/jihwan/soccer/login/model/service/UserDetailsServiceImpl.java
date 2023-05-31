@@ -53,10 +53,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         userDetailsDTO.setAuthorities(authorities);
-        userDetailsDTO.setEnabled(true);
-        userDetailsDTO.setAccountNonExpired(true);
-        userDetailsDTO.setAccountNonLocked(true);
-        userDetailsDTO.setCredentialsNonExpired(true);
+        userDetailsDTO.setEnabled(true); // 사용자 계정이 활성화 되어 있음
+        userDetailsDTO.setAccountNonExpired(true); // 사용자 계정이 만료되지 않음
+        userDetailsDTO.setAccountNonLocked(true); // 사용자 계정이 잠금되지 않음
+        userDetailsDTO.setCredentialsNonExpired(true); //사용자 자격증명이 완료되지 않음
 
         return userDetailsDTO;
     }

@@ -11,6 +11,9 @@
         <input type="text" id="userId" name="userId" placeholder="아이디" class="m-[4px] rounded border-2"><br>
         <input type="password" id="userPwd" name="userPwd" placeholder="비밀번호" class="m-[4px] rounded border-2"><br>
         <button type="submit" class="mt-[4px] bg-gray-500/10 w-[100%] rounded">로그인</button>
+        <div th:if="${loginError}" class="alert alert-danger" role="alert">
+            <span th:text="${loginError}"></span>
+        </div>
     </form>
 </div>
 </body>

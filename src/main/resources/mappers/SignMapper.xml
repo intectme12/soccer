@@ -50,4 +50,17 @@
           1
         )
     </insert>
+
+    <insert id="insertUserSignRole">
+        INSERT INTO AUTHORITIES
+        (
+            USER_ID,
+            AUTHORITY
+        )
+        VALUES
+        (
+            #{ userId },
+           'ROLE_USER'
+        )
+    </insert>
 </mapper>
