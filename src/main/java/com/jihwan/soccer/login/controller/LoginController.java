@@ -1,5 +1,10 @@
 package com.jihwan.soccer.login.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +23,8 @@ public class LoginController {
     }
 
     @PostMapping("/userLogin")
-    public String userLogin(@RequestParam(value = "error", required = false) String error, Model model){
-        if(error != null){
-            model.addAttribute("loginError", "아이디 또는 비밀번호가 일치하지 않습니다.");
-        }
-        return "";
-    }
+    public void userLogin(){}
 
     @GetMapping("/userLogout")
-    public String userLogout(HttpServletRequest request){
-
-        RedirectView redirectView = new RedirectView();
-        redirectView.setUrl(request.getRequestURL().toString());
-
-        return "redirect:request.getRequestURL().toString()";
-    }
+    public void userLogout(){}
 }

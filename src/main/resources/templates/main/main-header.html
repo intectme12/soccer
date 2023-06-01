@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns>
+<html xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,29 @@
     </div>
     <!-- login & logout -->
     <div class="m-auto p-3 relative">
-      <div class="grid grid-cols-6 gap-2 m-auto">
         <!-- input.css에 상세설정 -->
-        <input class="input-login" type="text" placeholder="id">
-        <input class="input-login" type="text" placeholder="pwd">
-        <button class="button-login" type="button"></button>
+      <form action="/login/userLogin" method="post">
+        <div class="grid grid-cols-6 gap-2 m-auto" th:if="${#authentication.getPrincipal() == 'anonymousUser'}">
+        <input class="input-login" type="text" placeholder="아이디" name="userId">
+        <input class="input-login" type="password" placeholder="비밀번호" name="userPwd">
+        <button class="button-login" type="submit">login</button>
         <button class="button-login" type="button">sns</button>
-      </div>
+        </div>
+      </form>
       <div class="grid grid-flow-col text-center float-right pt-4">
         <!-- input.css에 상세설정 -->
-        <a th:href="@{/sign/moveUserSignAgree}">
-          <div class="mr-2 pr-2 text-white border-r-2 border-white-500">회원가입</div>
-        </a>
-        <a>
-          <div class="text-white">비밀번호찾기</div>
-        </a>
+        <div class="grid grid-flow-col text-center float-right" th:if="${#authentication.getPrincipal() == 'anonymousUser' }">
+          <a th:href="@{/sign/moveUserSignAgree}">
+            <div class="mr-2 pr-2 text-white border-r-2 border-white-500">회원가입</div>
+          </a>
+          <a>
+            <div class="text-white">비밀번호찾기</div>
+          </a>
+        </div>
+        <div class="grid grid-flow-col text-center float-right" th:if="${#authentication.getPrincipal() != 'anonymousUser'}">
+          <span th:text="${ userId }"></span>님
+          <button class="button-login" type="button" onclick="location.href='/login/userLogout'">logout</button>
+        </div>
       </div>
     </div>
   </div>
